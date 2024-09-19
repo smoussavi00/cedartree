@@ -1,6 +1,6 @@
-@font-face { font-family: prociono; src: url('LibreBaskerville-Regular.otf'); } 
+@font-face { font-family: lbask; src: url('LibreBaskerville-Regular.otf'); } 
 h1 {
-   font-family: prociono;
+   font-family: lbask;
    font-size: 4em;
    margin: 0.5em;
    color: #1c1c1c;
@@ -15,12 +15,12 @@ input[type=text]{
     border-radius: 27px;
     padding-left: 20px;
     border-style: solid;
-    border-color: #1c1c1c;
+    border-color: #1C1C1C;
     border-width: 2px;
     width: 80%;
     height: 2em;
     font-size: 24px;
-    font-family: prociono;
+    font-family: lbask;
     font-weight: 500;
     }
 input[type=button]{
@@ -33,12 +33,12 @@ input[type=button]{
     font-size: 24px;
     font-weight: 500;
     background-color: #FEFFFB;
-    font-family: prociono;
+    font-family: lbask;
 }
 input[type=text]:focus, input[type=button]:hover{
     outline-width: 0;
 
-    background-color: #1c1c1c;
+    background-color: #1C1C1C;
     -webkit-transition: background-color 100ms linear;
     transition: background-color 100ms linear;
 
@@ -46,4 +46,24 @@ input[type=text]:focus, input[type=button]:hover{
 }
 body {
     background-color: #FEFFFB;
+}
+
+#main{
+    border-radius: 27px;
+    border-width: 2px;
+    border-color: #1C1C1C;
+    border-style: solid;
+    margin: 2em;
+    width: 20%;
+    height: 420px; 
+    float:left;
+    padding-top: 20px;
+}
+
+.th{
+    font-family: lbask;
+    font-weight: 700;
+    padding-left: 20px;
+    font-size: 20px;
+    line-height: 14px;
 }

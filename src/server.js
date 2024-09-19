@@ -12,8 +12,8 @@ app.get("/tree.js", (req, res) => {
     res.sendFile(path.join(__dirname, '/tree.js'));
 });
 
-app.get("/pixi.min.js", (req, res) => {
-    res.sendFile(path.join(__dirname, '/pixi.min.js'));
+app.get("/pixi.js", (req, res) => {
+    res.sendFile(path.join(__dirname, '/pixi.js'));
 });
 
 app.get("/LibreBaskerville-Regular.otf", (req, res) => {
