@@ -1,15 +1,48 @@
-@font-face { font-family: lbask; src: url('LibreBaskerville-Regular.otf'); } 
+@font-face { font-family: eudoxus; src: url('EudoxusSans-ExtraBold.ttf'); } 
 h1 {
-   font-family: lbask;
+   font-family: eudoxus;
    font-size: 4em;
-   margin: 0.5em;
-   color: #1c1c1c;
+   margin:0;
+   margin-top: 0.5em;
+   margin-bottom: -4px;
+   color: #FEFFFB;
 }
+
+h3 {
+    font-family: helvetica;
+    font-size: 1em;
+    color: #FEFFFB; 
+    margin:0;
+    margin-left: 5px;
+}
+
+#upper{
+    margin:auto;
+    width: 60%;
+}
+
+#ctlogo{
+    margin:0;
+    margin-top: 1.5em;
+    margin-right: -5.5em;
+    width: 20%;
+    min-height: 5em;
+    float: left;
+}
+
+#title{
+    width: 40%;
+    min-height: 5em;
+    float: left;
+}
+
+
 form{
     padding: 0;
     margin: 0.5em;
     margin-top: 3.1em;
-    }
+}
+
 input[type=text]{
     background-color: #FEFFFB;
     border-radius: 27px;
@@ -45,25 +78,5 @@ input[type=text]:focus, input[type=button]:hover{
     color: #FEFFFB;
 }
 body {
-    background-color: #FEFFFB;
-}
-
-#main{
-    border-radius: 27px;
-    border-width: 2px;
-    border-color: #1C1C1C;
-    border-style: solid;
-    margin: 2em;
-    width: 20%;
-    height: 420px; 
-    float:left;
-    padding-top: 20px;
-}
-
-.th{
-    font-family: lbask;
-    font-weight: 700;
-    padding-left: 20px;
-    font-size: 20px;
-    line-height: 14px;
+    background-color: #1C1C1C;
 }
