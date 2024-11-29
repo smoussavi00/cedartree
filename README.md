@@ -3,7 +3,7 @@
 
 
 - pixi module is not included, project made using node + express
--glove6b dataset not included
+
 
 
 
