@@ -5,7 +5,7 @@ function query(){
     word = document.getElementById('wordquery').value;
     dfs = [];
 
-    xml.open("GET", `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=3343553e-da66-4af8-bf72-9ba12cc34a3e`, true);
+    xml.open("GET", `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=_________`, true);
     xml.onload = (err) => {
         if (xml.readyState === 4) {
             if (xml.status === 200) {
@@ -53,7 +53,7 @@ function query(){
 
     const xml2 = new XMLHttpRequest();
 
-    xml2.open("GET", `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=c6faa39e-f147-4084-99f5-d4c7e451b5ce`, true);
+    xml2.open("GET", `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=_________`, true);
     xml2.onload = (err) => {
         if (xml2.readyState === 4) {
             if (xml2.status === 200) {
