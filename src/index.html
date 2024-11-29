@@ -2,29 +2,40 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="tree.js"> </script>
+    <script type="text/javascript" src="query.js"> </script> 
     <script src="pixi.js"></script>
 </head>
 
 <body>
+    <div id="main">
+        <div id="upper">
+            <img src="logom12.png" alt="logo" width="12%" />
+            <h1>  cedartree </h1> 
+        </div>
 
-    <div style="width: 25%; float:left; height: 8em;">
-        <h1> cedartree  </h1> 
+        <div id="defs"> </div>
+        <div style="width: 40%;   text-align: center;">
+            <form id="wordform" onsubmit="query(); return false;"> 
+                <input id="wordquery" type="text" maxlength="33" autocomplete="false" placeholder="Search in dictionary and thesaurus ..."> 
+            </form> 
+        </div>
+    
+
     </div>
-     
+    
+    
+    <!--
     <div style="width: 75%; float:left; height: 8em; ">
         <form id="wordform" onsubmit="return false"> 
             <input type="text" id="word"> 
             <input type="button" value="see" id="see">
         </form>     
     </div>
-
  
     <div id="main">
  
     </div>
     <div style="width: 50%; float:left;" id="canvas"> </div>
-
-
+    -->
 
 </body>

@@ -1,61 +1,106 @@
 @font-face { font-family: eudoxus; src: url('EudoxusSans-ExtraBold.ttf'); } 
+@font-face { font-family: eudoxus2; src: url('EudoxusSans-Medium.ttf'); } 
+
+
+body {
+    background-color: #1C1C1C;
+}
+
 h1 {
    font-family: eudoxus;
    font-size: 4em;
-   margin:0;
-   margin-top: 0.5em;
-   margin-bottom: -4px;
+   margin: -12px 0 0 8px;
    color: #FEFFFB;
 }
 
 h3 {
     font-family: helvetica;
     font-size: 1em;
+    margin: 0 0 0 5px;
     color: #FEFFFB; 
-    margin:0;
-    margin-left: 5px;
 }
-
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #upper{
-    margin:auto;
-    width: 60%;
-}
-
-#ctlogo{
-    margin:0;
-    margin-top: 1.5em;
-    margin-right: -5.5em;
-    width: 20%;
-    min-height: 5em;
-    float: left;
-}
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 #title{
-    width: 40%;
+    max-width: 40%;
     min-height: 5em;
     float: left;
 }
 
+#defs{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
-form{
-    padding: 0;
-    margin: 0.5em;
-    margin-top: 3.1em;
+    background-color: #323130;
+    border-radius: 12px;
+    padding: 5px;
+
+    font-family: helvetica;
+    height:400px;
+    width: 40%;
+
+    color: #FEFFFB; 
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;   
 }
 
 input[type=text]{
-    background-color: #FEFFFB;
-    border-radius: 27px;
-    padding-left: 20px;
+    width: 100%;
+    height: 2.5em;
+
     border-style: solid;
+    font-family: eudoxus2;
+    font-size: 1em;
     border-color: #1C1C1C;
-    border-width: 2px;
-    width: 80%;
-    height: 2em;
-    font-size: 24px;
-    font-family: lbask;
-    font-weight: 500;
-    }
+    background-color: #323130;
+    color: #9C9B98;
+    border-radius: 12px;
+
+    margin-top: 1em;
+    padding-left: 1.5em;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
+}
+
+input[type=text]:focus{
+    outline: none;
+}
+
+input::placeholder {
+    font-family: eudoxus2;
+    font-size: 1em;
+    color: #9C9B98;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.df{
+    margin: 8px;
+    background-color: #1C1C1C;
+    border-radius: 12px;
+    padding: 16px;
+}
+  
+
 input[type=button]{
     border-radius: 27px;
     border-style: solid;
@@ -68,7 +113,7 @@ input[type=button]{
     background-color: #FEFFFB;
     font-family: lbask;
 }
-input[type=text]:focus, input[type=button]:hover{
+input[type=button]:hover{
     outline-width: 0;
 
     background-color: #1C1C1C;
@@ -77,6 +122,15 @@ input[type=text]:focus, input[type=button]:hover{
 
     color: #FEFFFB;
 }
-body {
-    background-color: #1C1C1C;
+
+.dfsbuttons{
+    font-family: helvetica;
+    font-weight: 950;
+    font-size: 1em;
+
+    border-style: solid;
+    background-color: #FEFFFB;
+    color: #1C1C1C;
+    width: 3em;
+    height: 1.5em;
 }
