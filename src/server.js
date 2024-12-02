@@ -50,6 +50,10 @@ app.get("/logom12.png", (req, res) => {
   res.sendFile(path.join(__dirname, '/logom12.png'));
 });
 
+app.get("/diagram.png", (req, res) => {
+  res.sendFile(path.join(__dirname, '/diagram.png'));
+});
+
 app.post('/diagram', function(req, res) {
 
   args = ['wordsim.py'];
@@ -59,8 +63,9 @@ app.post('/diagram', function(req, res) {
 
   var sensor = spawn('python3.9', args);     
   sensor.on('close', (code) => {
-    console.log(`Python process exited with code ${code}`);
+    res.send(`Python process exited with code ${code}`);
   });
+
 });
 
 

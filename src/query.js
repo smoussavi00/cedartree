@@ -5,7 +5,7 @@ function query(){
     word = document.getElementById('wordquery').value;
     dfs = [];
 
-    xml.open("GET", `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=1`, true);
+    xml.open("GET", `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=56`, true);
     xml.onload = (err) => {
         if (xml.readyState === 4) {
             if (xml.status === 200) {
@@ -53,21 +53,31 @@ function query(){
                                     syns.push(element['meta']['syns'][0].slice(0,8));
                                 } 
                             });
-                            ths = `<p class='th'> <b>${word}</b> `;
+                            ths = `<div class='th_div'> <p class='th_main'> <b>${word}</b> `;
                             
-                            for(var i = 0; i < Math.min(3,rs.length); i++){
-                                console.log(rs[i]);
+                            for(var i = 0; i < Math.min(5,rs.length); i++){
                                 ths += `${i+1}. <i>${rs[i]['shortdef'][0]}</i>: ${syns[i].join(', ')} `
-                            } ths += `</p>`;
-                            document.getElementById('defs').innerHTML += ths;
+                            } ths += `</p> `;
+
+                            //ths += `<div class='th_dia'> <center> <i> '${rs[0]['shortdef'][0]}' </i> </center> <img src='diagram.png' class='dia'> <p style='margin:0'>`;
+
                             
                             let data = {w: word, s: syns[0], n: syns[0].length};
+                            let abc = 'ABCDEFGH'
 
                             fetch("/diagram", {
                                 method: "POST",
                                 headers: {'Content-Type': 'application/json'}, 
                                 body: JSON.stringify(data)
-                            }).then(data => console.log(data));;
+                            }).then( () => {
+                                ths += `<div class='th_dia'> <center> <i> '${rs[0]['shortdef'][0]}' </i> </center> <img src='diagram.png' class='dia'> <p style='margin:0'>`;
+                                for(var i = 0 ; i < syns[0].length; i++){
+                                    ths += `<b>${abc[i]}</b> ${syns[0][i]} `
+                                }
+                                ths += '</p> </div> </div>';
+                                document.getElementById('defs').innerHTML += ths;
+                            });
+
 
                         } else {
                             console.error(xml2.statusText);
