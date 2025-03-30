@@ -34,12 +34,22 @@ def gen():
             if event.type == pygame.QUIT:
                 running = False
 
+        # the line just below draws mod-1, the ones including c4pos and c5pos are for mod-2, and the three last ones are for mod-3
+        # they also use clr2, which is the darker variety -- switch to clr for the lighter output
+        
         pygame.draw.circle(transparent_surface, clr2, (320,320), r)
+        
+        #pygame.draw.circle(transparent_surface, clr2, c4pos, r)
+        #pygame.draw.circle(transparent_surface, clr2, c5pos, r)
+        
+        #pygame.draw.circle(transparent_surface, clr2, c1pos, r)
+        #pygame.draw.circle(transparent_surface, clr2, c2pos, r)
+        #pygame.draw.circle(transparent_surface, clr2, c3pos, r)
 
         screen.blit(transparent_surface, (0, 0))
         pygame.display.update()
 
-    pygame.image.save(transparent_surface,'mode-1b.png')
+    pygame.image.save(transparent_surface,'mod-1b.png')
     pygame.quit()
 
 gen()
