@@ -1,0 +1,283 @@
+@font-face{
+    font-family: "sfcr-medium";
+    src: url(/assets/SF-Compact-Rounded-Medium.otf) format("truetype");
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #121211;
+    height: 96vh;
+}
+
+h1{
+    font-family: sfcr-medium;
+    font-size: 52px;
+    color: #d6d5cd;
+    margin: 0 0 8px 6px;
+    white-space: nowrap;
+}
+
+label{
+    color: #d6d5cd;
+    width: 288px;
+    font-family: sfcr-medium;
+    margin-left: 3px;
+    margin-bottom: 2px;
+}
+
+button{
+    box-sizing: border-box;
+    height: 36px;
+    border: none;
+    border-radius: 8px; 
+
+    background-color:#323230;
+
+    font-family: sfcr-medium;
+    color: #d6d5cd;
+}
+
+button:hover{
+    background-color:#41413f;
+}
+
+p{
+    margin: 0;
+}
+
+#upper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center; 
+    height: 50px; min-height: 50px; max-height: 50px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+#upper-left{
+    height: 100%;
+    width: 45%;
+}
+
+#upper-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    margin-right: 20px;
+}
+
+.upper-item{
+    font-family: sfcr-medium;
+    font-size: 16px;
+    color: #d6d5cd;
+    margin: 0 4px 0;
+    cursor: pointer;
+}
+
+.upper-dash{
+    cursor: default;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    width: 1200px; max-width: 1200px;
+    height: 680px; min-height: 680px; max-height: 680px;
+}
+
+.column{
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 100%; min-height: 80%;
+}
+
+#B{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 600px; max-width: 600px;
+}
+
+#A,#C{
+    width: 300px; max-width: 300px;
+}
+
+#logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 36px;
+}
+
+#logoimg{
+    width: 12%;
+}
+
+.main-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 360px;
+    padding: 15px 0 5px;
+    border-radius: 8px;
+    margin-bottom: 2px;
+
+    background-color: #1e1e1d;
+}
+
+#email-forgot-form, #delete-form, #verify-form{
+    justify-content: flex-start; 
+    height: 150px; min-height: 150px; max-height: 150px;
+}
+
+#login-form, #passwordreset-form{
+    justify-content: flex-start; 
+    height: 240px; min-height: 240px; max-height: 240px;
+}
+
+#create-form, #change-form{
+    justify-content: flex-start; 
+    height: 300px; min-height: 300px; max-height: 300px;
+}
+
+#settings-form{
+    justify-content: space-evenly; 
+    height: 240px; min-height: 240px; max-height: 240px;
+    padding-top: 5px;
+}
+
+.passw-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 40px;
+    margin: 4px 0 16px;
+}
+
+.main-fields{
+    box-sizing: border-box;
+    width: 80%;
+    height: 36px;
+    border-radius: 8px;
+    padding-left: 2%;
+
+    background-color: #121211;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: #121211;
+
+    font-size: 12px;
+    font-family: sfcr-medium;
+    color: #d6d5cd;
+}
+
+#passw, #passwconf{
+    width: 79%;
+}
+
+#email, #code{
+    margin: 4px 0 16px;
+}
+
+.main-fields:focus{
+    border-style: solid;
+    border-width: 2px;
+    border-color:#323230;
+    outline: none;
+}
+
+.show-button{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    width: 17%;
+
+    font-size: 12px;
+}
+
+.main-button{
+    width: 80%;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.settings-button{
+    margin-top: 0;
+}
+
+.create-forgot-item{
+    text-decoration: none;
+    color: #d6d5cd;
+    font-family: sfcr-medium;
+    font-size: 15px;
+    margin: 0 8px 0;
+}
+
+.requirement-pair-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px; min-height: 40px;
+    width: 360px;
+    margin-top: 8px;
+}
+
+.requirement-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    width: 48%;
+    border-radius: 8px;
+
+    background-color: #1e1e1d;
+
+    font-family: sfcr-medium;
+    font-size: 15px;
+    color: #e2e1dc;
+}
+
+.requirement{
+    margin-left: 12px;
+}
+
+#requirement-error{
+    width: 360px;
+}
+
+.ffsq{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    margin-right: 8px;
+
+    background-color: #121211;
+}
+
+#bye-div{
+    height: 30%;
+    width: 80%;
+    margin: 16px 0 8px;
+}
+
+#bye{
+    font-family: sfcr-medium;
+    font-size: 16px;
+    color: #d6d5cd;
+
+}

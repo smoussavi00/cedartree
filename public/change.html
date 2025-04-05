@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>cedartree</title>
+    <link rel="stylesheet" href="/css/entry.css">
+</head>
+
+<body>
+    <div id="upper">
+        <div id="upper-left"></div>
+        <div id="upper-right"> <p class="upper-item" id="upper-email"> forgot password </p> <p class="upper-item upper-dash"> — </p> <p class="upper-item"> return </p> </div>    
+    </div>
+
+    <div class="container">
+
+        <div class="column" id="A"> </div>
+        <div class="column" id="B"> 
+
+            <div id="logo">
+                <img id="logoimg" src="/assets/ctlogo.png"> 
+                <h1> cedartree </h1>
+            </div>
+            
+            <form class="main-form" id="change-form">
+
+                    <label for="old-passw" id="new-passw-label"> Old password </label>
+
+                    <div class="passw-div">
+                        <input type="password" class="main-fields" id="old-passw" required>
+                        <button type="button" class="show-button" id="show-1"> <img src="/assets/eye.png" width="70%"> </button>                        
+                    </div>
+
+                    <label for="new-passw" id="new-passw-label"> New password </label>
+
+                    <div class="passw-div">
+                        <input type="password" class="main-fields" id="new-passw" required>
+                        <button type="button" class="show-button" id="show-2"> <img src="/assets/eye.png" width="70%"> </button>                        
+                    </div>
+
+                    <label for="new-passw-conf" id="new-passw-conf-label"> New password confirmation </label>
+
+                    <div class="passw-div">
+                        <input type="password" class="main-fields" id="new-passw-conf" required>
+                        <button type="button" class="show-button" id="show-3"> <img src="/assets/eye.png" width="70%"> </button>                        
+                    </div>
+
+                    <button type="button" class="main-button"> Reset password </button>
+
+            </form>
+
+            <div class="requirement-pair-div"> 
+                <div class="requirement-div">  <p class="requirement">8+ characters</p>  <div class="ffsq" id="req-1"> </div> </div> 
+                <div class="requirement-div">  <p class="requirement">lowercase a-z</p> <div class="ffsq" id="req-2"> </div>  </div>
+            </div>
+
+            <div class="requirement-pair-div"> 
+                <div class="requirement-div">  <p class="requirement">numeric 1-9</p>  <div class="ffsq" id="req-3"> </div> </div> 
+                <div class="requirement-div">  <p class="requirement">matching</p>  <div class="ffsq" id="req-4"> </div>  </div>
+            </div>
+
+            <div class="requirement-pair-div"> <div class="requirement-div" id="requirement-error"> <div class="requirement"> is a requirement </div>  <div class="ffsq" id="req-error"></div> </div> </div>
+
+            <script src="/js/change.js"></script>
+
+        </div>
+        <div class="column" id="C"> </div>
+    </div>
+</body>
+    
+</html>

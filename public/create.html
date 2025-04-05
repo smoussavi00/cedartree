@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>cedartree</title>
+    <link rel="stylesheet" href="/css/entry.css">
+</head>
+
+    <body>
+
+        <div id="upper"> </div>
+
+        <div class="container">
+            <div class="column" id="A"> </div>
+            <div class="column" id="B"> 
+
+                <div id="logo">
+                    <img id="logoimg" src="/assets/ctlogo.png"> 
+                    <h1> cedartree </h1>
+                </div>
+                
+                <form class="main-form" id="create-form">
+                        
+                        <label for="email" id="email-label"> Email </label>
+                        <input type="text" class="main-fields" id="email" required>
+
+                        <label for="passw" id="passw-label"> Password </label>
+
+                        <div class="passw-div">
+                            <input type="password" class="main-fields" id="passw" required>
+                            <button type="button" class="show-button" id="show-1"> <img src="/assets/eye.png" width="70%"> </button>                        </div>
+
+                        <label for="passw-conf" id="passw-conf-label"> Password Confirmation </label>
+
+                        <div class="passw-div">
+                            <input type="password" class="main-fields" id="passw-conf" required>
+                            <button type="button" class="show-button" id="show-2"> <img src="/assets/eye.png" width="70%"> </button>                        </div>
+
+                        <button type="button" class="main-button"> Create account </button>
+                </form>
+
+                <div class="requirement-pair-div"> 
+                    <div class="requirement-div">  <p class="requirement">valid email</p> <div class="ffsq" id="req-1"> </div>  </div>
+                    <div class="requirement-div">  <p class="requirement">8+ characters</p>  <div class="ffsq" id="req-2"> </div> </div> 
+                </div>
+                <div class="requirement-pair-div"> 
+                    <div class="requirement-div">  <p class="requirement">lowercase a-z</p> <div class="ffsq" id="req-3"> </div>  </div>
+                    <div class="requirement-div">  <p class="requirement">numeric 1-9</p>  <div class="ffsq" id="req-4"> </div> </div> 
+                </div>
+                <div class="requirement-pair-div"> 
+                    <div class="requirement-div">  <p class="requirement">matching</p>  <div class="ffsq" id="req-5"> </div>  </div>
+                </div>
+
+                <script src="/js/create.js"></script>
+
+            </div>
+            <div class="column" id="C"> </div>
+        </div>
+    </body>
+    
+</html>
