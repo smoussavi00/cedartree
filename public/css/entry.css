@@ -135,12 +135,12 @@ p{
     background-color: #1e1e1d;
 }
 
-#email-forgot-form, #delete-form, #verify-form{
+#forgot-form, #delete-form, #verify-form{
     justify-content: flex-start; 
     height: 150px; min-height: 150px; max-height: 150px;
 }
 
-#login-form, #passwordreset-form{
+#login-form, #reset-form{
     justify-content: flex-start; 
     height: 240px; min-height: 240px; max-height: 240px;
 }

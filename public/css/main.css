@@ -261,7 +261,7 @@ h3{
     margin: 0 7px 0;
 }
 
-#confirm{
+#set{
     box-sizing: border-box;
 
     height: 32px; min-height: 32px; max-height: 32px;
@@ -277,7 +277,7 @@ h3{
     color: #d6d5cd;
 }
 
-#confirm:hover{
+#set:hover{
     background-color:#41413f;
     border-color: #41413f;
 }
@@ -356,6 +356,15 @@ h3{
 
 .m-fill{
     background-color: #121211;
+}
+
+#stats{
+    width: 50%;
+    margin: 12px;
+
+    font-family: sfcr-medium;
+    font-size: 16px;
+    color: #d6d5cd;
 }
 
 #companion{
