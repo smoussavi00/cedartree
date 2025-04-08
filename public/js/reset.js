@@ -1,6 +1,5 @@
 const show1 = document.getElementById('show-1');
 const show2 = document.getElementById('show-2');
-const show3 = document.getElementById('show-3');
 
 const npassw = document.getElementById("new-passw");
 const npasswconf = document.getElementById("new-passw-conf");
@@ -14,59 +13,14 @@ var r1, r2, r3, r4 = false;
 
 show1.addEventListener("click",function(){passwtoggle(1)});
 show2.addEventListener("click",function(){passwtoggle(2)});
-show3.addEventListener("click",function(){passwtoggle(3)});
 
 npassw.addEventListener("keyup",function(){requirements(); matching();});
 npasswconf.addEventListener("keyup",matching);
 
-document.getElementById("change-button").addEventListener("click",procchange);
-document.addEventListener('keydown', function(event) { if (event.key === 'Enter') procchange(); });
+document.getElementById("reset-button").addEventListener("click",procreset);
+document.addEventListener('keydown', function(event) { if (event.key === 'Enter') procreset(); });
 
-document.getElementById("upper-forgot").addEventListener("click", function() {
-  window.location.href = "/forgot";
-});
-
-document.getElementById("upper-return").addEventListener("click", function() {
-  window.location.href = "/main";
-});
-
-function procchange(){
-
-  clearerror();
-
-  var opassw = document.getElementById("old-passw").value;
-
-  if(opassw === ""){
-    throwerror("empty fields");
-    return;
-  }
-
-  /*
-  var data = {
-    password: opassw
-  };
-  fetch('/oldpassw', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  } )
-  .catch((error) => {
-    console.error('Error:', error);
-  }
-  */
-
-  // INFUNCTIONAL
-  if(wrong.opassw){
-    throwerror("invalid password");
-    return;
-  }
-
+function procreset(){
   if(r1 && r2 && r3 && r4){
     var data = {
       password: npassw.value
@@ -131,15 +85,13 @@ function matching(){
 }
 
 function passwtoggle(x) {
-
-  if(x == 1) var p = document.getElementById("old-passw");
-  if(x == 2) var p = document.getElementById("new-passw");
-  if(x == 3) var p = document.getElementById("new-passw-conf");
+  if(x == 1) var p = document.getElementById("new-passw");
+  if(x == 2) var p = document.getElementById("new-passw-conf");
 
   if (p.type === "password") {
-      p.type = "text";
+    p.type = "text";
   } else {
-      p.type = "password";
+    p.type = "password";
   }
 }
 
@@ -172,14 +124,4 @@ function blink(){
     setTimeout(function(){req4.style.backgroundColor = '#d6d5cd';}, 750);
     setTimeout(function(){req4.style.backgroundColor = '#121211';}, 1000);
   }
-}
-
-function throwerror(m) {
-  var error = document.getElementById("error");
-  error.innerHTML = `<div class="requirement-div" id="requirement-error"> <div class="requirement"> ${m} </div> <div class="ffsq" id="req-error" style="background-color:#d6d5cd"> </div> </div>`;
-}
-
-function clearerror() {
-  var error = document.getElementById("error");
-  error.innerHTML = "";
 }
