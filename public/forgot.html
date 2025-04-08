@@ -6,10 +6,12 @@
 </head>
 
     <body>
+
         <div id="upper">
             <div id="upper-left"></div>
-            <div id="upper-right"> <p class="upper-item"> return </p> </div>    
+            <div id="upper-right"> <p class="upper-item" id="upper-return"> return </p> </div>    
         </div>
+
         <div class="container">
             <div class="column" id="A"> </div>
             <div class="column" id="B"> 
@@ -19,15 +21,15 @@
                     <h1> cedartree </h1>
                 </div>
             
-                <form class="main-form" id="email-forgot-form">
+                <form class="main-form" id="forgot-form">
                         <label for="email"> Email </label>
-                        <input type="text" class="main-fields" id="email" required>
+                        <input type="text" class="main-fields" id="email">
 
-                        <button type="button" class="main-button"> Verify password reset </button>
+                        <button type="button" class="main-button" id="forgot-button"> Send reset code </button>
                 </form>
 
-                <div class="requirement-pair-div"> <div class="requirement-div" id="requirement-error"> <div class="requirement"> is a requirement </div>  <div class="ffsq" id="req-error"></div> </div> </div>
-                
+                <div class="requirement-pair-div" id="error"> </div>
+                                
                 <script src="/js/forgot.js"></script>
 
             </div>
@@ -35,7 +37,6 @@
         </div>
     </body>
     
-
 </html>
 
 <!--

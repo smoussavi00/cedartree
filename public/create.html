@@ -7,7 +7,10 @@
 
     <body>
 
-        <div id="upper"> </div>
+        <div id="upper">
+            <div id="upper-left"></div>
+            <div id="upper-right"> <p class="upper-item" id="upper-return"> return </p> </div>    
+        </div>
 
         <div class="container">
             <div class="column" id="A"> </div>
@@ -21,21 +24,21 @@
                 <form class="main-form" id="create-form">
                         
                         <label for="email" id="email-label"> Email </label>
-                        <input type="text" class="main-fields" id="email" required>
+                        <input type="text" class="main-fields" id="email">
 
                         <label for="passw" id="passw-label"> Password </label>
 
                         <div class="passw-div">
-                            <input type="password" class="main-fields" id="passw" required>
+                            <input type="password" class="main-fields" id="passw">
                             <button type="button" class="show-button" id="show-1"> <img src="/assets/eye.png" width="70%"> </button>                        </div>
 
                         <label for="passw-conf" id="passw-conf-label"> Password Confirmation </label>
 
                         <div class="passw-div">
-                            <input type="password" class="main-fields" id="passw-conf" required>
+                            <input type="password" class="main-fields" id="passw-conf">
                             <button type="button" class="show-button" id="show-2"> <img src="/assets/eye.png" width="70%"> </button>                        </div>
 
-                        <button type="button" class="main-button"> Create account </button>
+                        <button type="button" class="main-button" id="create-button"> Create account </button>
                 </form>
 
                 <div class="requirement-pair-div"> 
@@ -49,6 +52,8 @@
                 <div class="requirement-pair-div"> 
                     <div class="requirement-div">  <p class="requirement">matching</p>  <div class="ffsq" id="req-5"> </div>  </div>
                 </div>
+
+                <div class="requirement-pair-div" id="error"> </div>
 
                 <script src="/js/create.js"></script>
 

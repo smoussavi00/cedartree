@@ -9,7 +9,7 @@
 
         <div id="upper">
             <div id="upper-left"></div>
-            <div id="upper-right"> <p class="upper-item" id="upper-email"> forgot password </p> <p class="upper-item upper-dash"> — </p> <p class="upper-item"> create account </p> </div>    
+            <div id="upper-right"> <p class="upper-item" id="upper-forgot"> forgot password </p> <p class="upper-item upper-dash"> — </p> <p class="upper-item" id="upper-create"> create account </p> </div>    
         </div>
         
         <div class="container">
@@ -24,19 +24,19 @@
 
                 <form class="main-form" id="login-form">
                         <label for="email"> Email </label>
-                        <input type="text" class="main-fields" id="email" required>
+                        <input type="text" class="main-fields" id="email">
 
                         <label for="passw" id="passw-label"> Password </label>
 
                         <div class="passw-div">
-                            <input type="password" class="main-fields" id="passw" required>
+                            <input type="password" class="main-fields" id="passw">
                             <button type="button" class="show-button" id="show-1"> <img src="/assets/eye.png" width="70%"> </button>
                         </div>
 
-                        <button type="button" class="main-button"> Sign in </button>
+                        <button type="button" class="main-button" id="signin-button"> Sign in </button>
                 </form>
 
-                <div class="requirement-pair-div"> <div class="requirement-div" id="requirement-error"> <div class="requirement"> is a requirement </div>  <div class="ffsq" id="req-error"></div> </div> </div>
+                <div class="requirement-pair-div" id="error"> </div>
 
                 <script src="/js/login.js"></script>
 

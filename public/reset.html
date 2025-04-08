@@ -8,7 +8,7 @@
 <body>
     <div id="upper">
         <div id="upper-left"></div>
-        <div id="upper-right"> <p class="upper-item" id="upper-forgot"> forgot password </p> <p class="upper-item upper-dash"> — </p> <p class="upper-item" id="upper-return"> return </p> </div>    
+        <div id="upper-right"> <p class="upper-item" id="upper-return"> return </p> </div>    
     </div>
 
     <div class="container">
@@ -21,30 +21,23 @@
                 <h1> cedartree </h1>
             </div>
             
-            <form class="main-form" id="change-form">
-
-                    <label for="old-passw" id="new-passw-label"> Old password </label>
-
-                    <div class="passw-div">
-                        <input type="password" class="main-fields" id="old-passw">
-                        <button type="button" class="show-button" id="show-1"> <img src="/assets/eye.png" width="70%"> </button>                        
-                    </div>
+            <form class="main-form" id="reset-form">
 
                     <label for="new-passw" id="new-passw-label"> New password </label>
 
                     <div class="passw-div">
                         <input type="password" class="main-fields" id="new-passw">
-                        <button type="button" class="show-button" id="show-2"> <img src="/assets/eye.png" width="70%"> </button>                        
+                        <button type="button" class="show-button" id="show-1"> <img src="/assets/eye.png" width="70%"> </button>                        
                     </div>
 
                     <label for="new-passw-conf" id="new-passw-conf-label"> New password confirmation </label>
 
                     <div class="passw-div">
                         <input type="password" class="main-fields" id="new-passw-conf">
-                        <button type="button" class="show-button" id="show-3"> <img src="/assets/eye.png" width="70%"> </button>                        
+                        <button type="button" class="show-button" id="show-2"> <img src="/assets/eye.png" width="70%"> </button>                        
                     </div>
 
-                    <button type="button" class="main-button" id="change-button"> Change password </button>
+                    <button type="button" class="main-button" id="reset-button"> Reset password </button>
 
             </form>
 
@@ -57,10 +50,8 @@
                 <div class="requirement-div">  <p class="requirement">numeric 1-9</p>  <div class="ffsq" id="req-3"> </div> </div> 
                 <div class="requirement-div">  <p class="requirement">matching</p>  <div class="ffsq" id="req-4"> </div>  </div>
             </div>
-
-            <div class="requirement-pair-div" id="error"> </div>
             
-            <script src="/js/change.js"></script>
+            <script src="/js/reset.js"></script>
 
         </div>
         <div class="column" id="C"> </div>
