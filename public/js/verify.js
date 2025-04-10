@@ -7,6 +7,9 @@ document.addEventListener('keydown', function(event) { if (event.key === 'Enter'
 document.getElementById("verify-form").addEventListener("submit", function(event) { event.preventDefault(); });
 
 document.getElementById("upper-resend").addEventListener("click", procresend);
+document.getElementById("upper-create").addEventListener("click", function() {
+  window.location.href = "/create";
+});
 
 window.onload = async function(){
 
@@ -16,8 +19,6 @@ window.onload = async function(){
     .catch(error => {console.error('Error fetching session data:', error);});
 
     document.getElementById("verify-button").innerHTML += email;
-
-
 
 };
 
@@ -35,18 +36,25 @@ async function procverify(){
 
     var attempt = code.value;
 
-    if (attempt === "") {
-        throwerror("empty field");
-        return;
-    } 
-    if (attempt !== c){
-        throwerror("invalid code");
-        return;
-    } if (exp < Date.now()){
-        throwerror("expired code");
-        return;
-    } 
-    
+    if (attempt === "") return throwerror("empty field");
+    if (attempt !== c) return throwerror("invalid code");
+    if (exp < Date.now()) return throwerror("expired - create new account or resend code");
+ 
+    await fetch('/api/verify', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: email })
+    })
+    .then(response => { return response.json(); })
+    .then(data => {
+        if(data.message == "goodverify") window.location.href = "/main";
+        else throwerror("unkown error");
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 
 }
 

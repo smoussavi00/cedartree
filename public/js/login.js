@@ -48,8 +48,8 @@ function procsignin() {
     } else if(data.message == "badpass"){
       throwerror("invalid password");
     } else if(data.message == "unverified"){
-      throwerror("email not verified");
-    } else if(data.message == "bademail"){
+      window.location.href = "/verify";
+    }  else if(data.message == "bademail"){
       throwerror("email not found");
     }
   })
