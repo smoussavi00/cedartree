@@ -20,16 +20,12 @@ function procsignin() {
   var email = document.getElementById("email").value;
   var passw = document.getElementById("passw").value;
 
-  if (email === "" || passw === "") {
-    throwerror("empty fields");
-    return;
-  }
+  if (email === "" || passw === "") return throwerror("empty fields");
   if (!email.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)) {
     throwerror("invalid email");
     return;
   } 
 
-  
   var data = {
     email: email,
     password: passw
@@ -43,15 +39,10 @@ function procsignin() {
   })
   .then(response => { return response.json(); })
   .then(data => {
-    if(data.message == "goodlogin"){
-      window.location.href = "/main";
-    } else if(data.message == "badpass"){
-      throwerror("invalid password");
-    } else if(data.message == "unverified"){
-      window.location.href = "/verify";
-    }  else if(data.message == "bademail"){
-      throwerror("email not found");
-    }
+    if(data.message == "goodlogin") return window.location.href = "/main";
+    else if(data.message == "badpassw") return throwerror("invalid password");
+    else if(data.message == "unverified") return window.location.href = "/verify";
+    else if(data.message == "bademail") return throwerror("email not found");
   })
   .catch((error) => {
     console.error('Error:', error);
@@ -60,12 +51,12 @@ function procsignin() {
 }
 
 function passwtoggle() {
+  
   var p = document.getElementById("passw");
-  if (p.type === "password") {
-    p.type = "text";
-  } else {
-    p.type = "password";
-  }
+
+  if (p.type === "password") p.type = "text";
+  else p.type = "password";
+  
 }
 
 function throwerror(m) {

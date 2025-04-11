@@ -1,6 +1,5 @@
 const code = document.getElementById("code");
-var c;
-var exp;
+var email;
 
 document.getElementById("verify-button").addEventListener("click", procverify);
 document.addEventListener('keydown', function(event) { if (event.key === 'Enter') procverify(); });
@@ -15,7 +14,7 @@ window.onload = async function(){
 
     await fetch('/api/session')
     .then(response => { return response.json(); })
-    .then(data => { email = data.email; })
+    .then(data => { email = data.email; if(data.loggedin) window.location.href = "/main"; })
     .catch(error => {console.error('Error fetching session data:', error);});
 
     document.getElementById("verify-button").innerHTML += email;
@@ -26,31 +25,22 @@ async function procverify(){
 
     clearerror();
 
-    await fetch('/api/code')
-    .then(response => { return response.json(); })  
-    .then(data => { 
-        c = data.code; 
-        exp = data.codeexp;
-    })
-    .catch(error => {console.error('Error fetching code:', error);});
-
     var attempt = code.value;
 
     if (attempt === "") return throwerror("empty field");
-    if (attempt !== c) return throwerror("invalid code");
-    if (exp < Date.now()) return throwerror("expired - create new account or resend code");
- 
+
     await fetch('/api/verify', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({ email: email, attempt: attempt, forgot: false })
     })
     .then(response => { return response.json(); })
     .then(data => {
         if(data.message == "goodverify") window.location.href = "/main";
-        else throwerror("unkown error");
+        if(data.message == "badcode") throwerror("invalid code");
+        if(data.message == "expired") throwerror("expired - create new account or resend code");
     })
     .catch((error) => {
         console.error('Error:', error);
@@ -67,7 +57,7 @@ function procresend() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({ email: email, forgot: false })
     })
     .then(() => {throwerror("code resent");})
     .catch((error) => {

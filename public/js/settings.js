@@ -11,6 +11,19 @@ document.getElementById("st-delete-button").addEventListener("click", function()
 });
 
 document.getElementById("st-signout-button").addEventListener("click", function() {
-    // INFUNCTIONAL
+    fetch('/api/signout', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => { return response.json(); })
+    .then(data => {
+        if (data.message == "signedout") return window.location.href = "/login";
+        else throwerror("error signing out");
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 }
 );

@@ -13,6 +13,9 @@ const req5 = document.getElementById("req-5");
 
 var r1, r2, r3, r4, r5 = false;
 
+var emailval;
+var verified;
+
 show1.addEventListener("click",function(){passwtoggle(1)});
 show2.addEventListener("click",function(){passwtoggle(2)});
 
@@ -27,19 +30,22 @@ document.getElementById("upper-return").addEventListener("click", function() {
   window.location.href = "/login";
 });
 
-document.getElementById("upper-return-2").addEventListener("click", function() {
-  window.location.href = "/verify";
-});
-
 window.onload = async function(){
 
   await fetch('/api/session')
   .then(response => { return response.json(); })
-  .then(data => { email = data.email; verified = data.verified; })
+  .then(data => { emailval = data.email; verified = data.verified; })
   .catch(error => {console.error('Error fetching session data:', error);}); 
 
-  if(email && !verified) document.getElementById("upper-right").innerHTML = '<p class="upper-item" id="upper-return-2"> return to verify </p> <p class="upper-item upper-dash"> — </p> <p class="upper-item" id="upper-return"> return to login </p>';
-
+  if(email && !verified){
+    document.getElementById("upper-right").innerHTML = '<p class="upper-item" id="upper-return-2"> return to verify </p> <p class="upper-item upper-dash"> — </p> <p class="upper-item" id="upper-return"> return to login </p>';
+    document.getElementById("upper-return").addEventListener("click", function() {
+      window.location.href = "/login";
+    });    
+    document.getElementById("upper-return-2").addEventListener("click", function() {
+      window.location.href = "/verify";
+    });
+  }
 };
 
 function proccreate(){
@@ -59,8 +65,8 @@ function proccreate(){
     })
     .then(response => {return response.json()})
     .then(data => {
+      if(data.message == "goodcreate") return window.location.href = "/verify";
       if(data.message == "existsuser") throwerror("email already exists");
-      else window.location.href = "/verify";
     })
     .catch((error) => {
       console.error('Error:', error);

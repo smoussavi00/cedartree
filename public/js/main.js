@@ -28,7 +28,7 @@ window.onload = async function() {
     y = []
 
     levelswitch('day');
-    maineventsetup();
+    maineventst();
 
     ygt_sample().then(data => {y = data;}).then(() => {
         monthcache = monthgen(y);
@@ -50,7 +50,7 @@ function levelswitch(lv, y=[]){
           corest(html);
         })
         .then(positiongen)
-        .then(dayeventsetup)
+        .then(dayeventst)
         .then(xsqst)
         .then(modst)
         .catch(error => {
@@ -67,7 +67,7 @@ function levelswitch(lv, y=[]){
     }
 }
 
-function maineventsetup(){
+function maineventst(){
     document.getElementById("selector").addEventListener("mouseleave", function(){ levelhover("");});
 
     document.getElementById("level-day").addEventListener("mouseenter", function(){ levelhover("day");});
@@ -82,7 +82,7 @@ function maineventsetup(){
     document.getElementById("upper-email").addEventListener("click", statgen);
 }
 
-function dayeventsetup(){
+function dayeventst(){
 
     const m1 = document.getElementById("mod-1");
     const m2 = document.getElementById("mod-2");
