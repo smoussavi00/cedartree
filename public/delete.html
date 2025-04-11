@@ -8,7 +8,7 @@
 <body>
     <div id="upper">
         <div id="upper-left"></div>
-        <div id="upper-right"> <p class="upper-item" id="upper-return"> return </p> </div>    
+        <div id="upper-right"> <p class="upper-item" id="upper-forgot"> forgot password </p> <p class="upper-item upper-dash"> — </p>  <p class="upper-item" id="upper-return"> return to main </p> </div>    
     </div>
 
     <div class="container">
@@ -23,10 +23,18 @@
             
             <form class="main-form" id="delete-form">
 
-                    <div id="bye-div"> <p id="bye"> Delete account and remove all associated data </p> </div>
-                    <button type="button" class="main-button" id="delete-button"> Delete account </button>
+                <label for="passw"> Password </label>
+
+                <div class="passw-div">
+                    <input type="password" class="main-fields" id="passw">
+                    <button type="button" class="show-button" id="show-1"> <img src="/assets/eye.png" width="70%"> </button>
+                </div>
+
+                <button type="button" class="main-button" id="delete-button"> Delete account and all data </button>
 
             </form>
+
+            <div class="requirement-pair-div" id="error"> </div>
 
             <script src="/js/delete.js"></script>
 
